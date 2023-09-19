@@ -1,0 +1,3 @@
+<template>
+  MovieSlider
+  </template>

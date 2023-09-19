@@ -1,7 +1,7 @@
 # Vue.js 사이트 프로젝트
 
-이 프로젝트는 여러 가지 API사용에 익숙해지기 위해 작업했습니다. 
-Youtube, TMDB(The Movie Database), Unsplash API를
+이 프로젝트는 여러 가지 API사용에 익숙해지는 과정을 담은 사이트입니다. 
+Youtube, Unsplash, TMDB(The Movie Database) API를
 Postman사이트를 이용하여 데이터를 분류하고 그 중에서 원하는 데이터만 가져와 사용했습니다.
 Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드정리를 하였습니다.
 
@@ -23,12 +23,12 @@ Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드�
 ## 사용 스택
 - vue(https://ko.vuejs.org/) 를 사용하여 사이트를 번들링하고 관리합니다.
 - YoutubeAPI(https://console.cloud.google.com/apis/) 를 이용하여 유튜브 목록, 검색 기능을 구현합니다.
-- TMDB API(https://www.themoviedb.org/?language=ko) 를 이용하여 영화 목록, 검색, 이미지슬라이드를 기능을 구현합니다.
 - Unsplash API(https://unsplash.com/ko) 를 postman이용하여 이미지 목록, 검색, 이미지슬라이드를 기능을 구현합니다.
+- TMDB API(https://www.themoviedb.org/?language=ko) 를 이용하여 영화 목록, 검색, 이미지슬라이드를 기능을 구현합니다.
 - Postman(https://www.postman.com/) 을 이용하여 restfulAPI를 요청하여 데이터를 분류하고 원하는 데이터만 가져와서 사용합니다.
 - netlify(https://www.netlify.com/) 를 통해 사이트를 배포합니다.
 - github(https://github.com/) 을 사용하여 파일을 관리합니다.
-- HTML, CSS 기반으로 웹사이트의 기본 레이아웃 설계하고, 웹 표준 및 웹 접근성을 준수하여 작업합니다. 
+- HTML, CSS 기반으로 웹사이트의 기본 레이아웃 설계하고, 웹 표준 및 웹 접근성을 준수하여 작업합니다. <br />
 [ARIA(Accessible Rich Internet Applications)](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles)
 
 ## 프로젝트 실행
@@ -39,8 +39,8 @@ Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드�
 
 ## API 요청
 1. **YOUTUBE :** ([ YouTube Data API v3 ](https://console.cloud.google.com/apis/)에서 API Key 발급 필요)
-2. **MOVIE :** ([ themoviedb ](https://www.themoviedb.org/?language=ko)에서 API Key 발급 필요)
-3. **UNSPLASH :** ([ postman ](https://www.postman.com/downloads/)에서 API Key 발급 필요)
+2. **UNSPLASH :** ([ postman ](https://www.postman.com/downloads/)에서 API Key 발급 필요)
+3. **MOVIE :** ([ themoviedb ](https://www.themoviedb.org/?language=ko)에서 API Key 발급 필요)
 
 ## Screenshots
 ![image](https://)

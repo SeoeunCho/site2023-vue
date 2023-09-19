@@ -1,0 +1,3 @@
+<template>
+  UnsplashSlider
+  </template>
