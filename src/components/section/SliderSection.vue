@@ -4,7 +4,7 @@ import { sliderText } from '@/constants/index';
 
 <template>
   <section id="slider" :style="`background-color: ${swiperBg}`">
-    <div class="slider__inner">
+    <div class="slider-inner">
       <swiper
         :slides-per-view="1"
         :space-8between="50"
@@ -17,7 +17,7 @@ import { sliderText } from '@/constants/index';
         @slideChange="onSlideChange"
       >
         <swiper-slide v-for="(slider, index) in sliderText" :key="index">
-          <div class="slider__img">
+          <div class="slider-img">
             <div class="slider s1">
               <div class="text">
                 <h3 v-if="index === 0" v-html="slider.title" :style="{ color: 'var(--white)' }"></h3>
@@ -87,14 +87,14 @@ export default {
 #slider {
   padding: 180px 0px 85px;
 
-  .slider__inner {
+  .slider-inner {
     position: relative;
 
     .swiper-pagination-current {
       font-weight: bold;
     }
 
-    .slider__img {
+    .slider-img {
       max-width: 1320px;
       margin: 0 auto;
       padding: 0px 185px;
@@ -133,8 +133,8 @@ export default {
           padding: 10px 30px;
           cursor: pointer;
           font-size: 16px;
-          border-radius: 50px;
           margin-bottom: 100px;
+          @include border(50px);
         }
         .more1 {
           background-color: #fff;
@@ -212,7 +212,7 @@ export default {
             top: 50%;
             width: 20px;
             height: 20px;
-            border-radius: 50%;
+            @include border(50%);
           }
           span:nth-child(1) {
             background-color: var(--button_blue);

@@ -1,5 +1,5 @@
 <template>
-  <div class="cont__title">
+  <div class="cont-title">
     <h2>{{ title }}</h2>
   </div>
 </template>
@@ -15,7 +15,7 @@ export default {
 <style lang="scss">
 @import '../../assets/scss/setting/mixin';
 
-.cont__title {
+.cont-title {
   h2 {
     text-align: center;
     font-size: 5vw;

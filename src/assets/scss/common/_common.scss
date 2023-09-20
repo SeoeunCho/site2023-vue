@@ -7,31 +7,30 @@
 }
 
 /* section */
-.section.center {
-  > h3 {
-    text-align: center;
-  }
-  > p {
-    text-align: center;
-  }
-}
-
 .section {
   padding: 120px 0;
 
-  > h3 {
-    font-size: 50px;
-  }
+  > div {
+    > h3 {
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
 
-  > p {
-    font-size: 22px;
-    font-weight: 300;
-    margin-bottom: 60px;
+    > p {
+      font-size: 22px;
+      font-weight: 300;
+      margin-bottom: 60px;
+    }
   }
 }
 
-// cont__title
-.cont__title {
+.section.center {
+  text-align: center;
+}
+
+/* cont-title */
+.cont-title {
   h2 {
     text-align: center;
     font-size: 5vw;
@@ -41,7 +40,7 @@
   }
 }
 
-// background
+/* background */
 .bg-blue {
   background-color: var(--bg_section);
 }
@@ -49,18 +48,25 @@
   background-color: var(--bg_section2);
 }
 
-// button
-.button-blue {
+/* button */
+.button-violet {
   @include button(#4857ec, #ffffff);
+  @include border(50px);
 }
 .button-red {
   @include button(#ff3344, #ffffff);
+  @include border(50px);
+}
+.button-blue {
+  @include button(#00f, #ffffff);
+  @include border(50px);
 }
 .button-green {
   @include button(#00c183, #ffffff);
+  @include border(50px);
 }
 
-// icon
+/* icon */
 .icon-bg1 {
   @include icon(
     #d3f6ea,
@@ -98,7 +104,7 @@
   );
 }
 
-// blind
+/* blind */
 .blind {
   position: absolute;
   clip: rect(0, 0, 0, 0);
@@ -108,7 +114,7 @@
   overflow: hidden;
 }
 
-//ir
+/* ir */
 .ir {
   display: block;
   overflow: hidden;
@@ -117,7 +123,7 @@
   text-indent: -9999px;
 }
 
-// skip
+/* skip */
 #skip {
   position: relative;
   z-index: 100000;
@@ -174,4 +180,18 @@ $interval: (
 
 .mr10 {
   margin-right: 10px;
+}
+
+.left {
+  float: left;
+}
+
+.strong {
+  font-size: 20px;
+  font-weight: 600;
+  // margin-left: 6px;
+}
+
+body {
+  overflow-x: hidden;
 }

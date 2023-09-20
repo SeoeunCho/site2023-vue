@@ -5,13 +5,14 @@ import { IntroText } from '@/constants/index';
 <template>
   <section id="intro" class="section">
     <h3 class="blind">음악 장르에 대한 소개</h3>
-    <div class="intro__inner container">
-      <div class="intro__title">
+    <div class="intro-inner container">
+      <div class="intro-title">
         <span>Music Genre by Artists</span>
         <h3 v-html="IntroText.title"></h3>
         <p v-html="IntroText.desc"></p>
+        <router-link to="/intro">자세히 보기</router-link>
       </div>
-      <div class="intro__desc">
+      <div class="intro-desc">
         <div v-for="(text, index) in IntroText.genres" :key="index">
           <h4 :class="'icon-bg' + (index + 1)">{{ text.title }}</h4>
           <p>
@@ -38,19 +39,19 @@ export default {};
   box-sizing: border-box;
   background-color: var(--subBg100);
 
-  .intro__inner {
+  .intro-inner {
     display: flex;
     justify-content: space-between;
   }
-  .intro__title {
+  .intro-title {
     width: 33%;
 
     span {
+      @include border(40px);
       background-color: #ff3344;
       font-size: 14px;
       padding: 4px 30px 2px;
       color: #fff;
-      border-radius: 40px;
       text-transform: uppercase;
       margin-bottom: 10px;
       display: inline-block;
@@ -65,9 +66,24 @@ export default {};
       font-size: 18px;
       line-height: 1.5;
       font-weight: 500;
+      margin-bottom: 30px;
+    }
+    a {
+      @include border(50px);
+      display: inline-block;
+      padding: 10px 50px;
+      border: 2px solid #ff3344;
+      background-color: var(--white);
+      color: #ff3344;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #ff3344;
+        color: var(--white);
+      }
     }
   }
-  .intro__desc {
+  .intro-desc {
     width: 66%;
     display: flex;
     flex-wrap: wrap;
