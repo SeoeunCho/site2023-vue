@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import IntroView from '../views/IntroView.vue'
+import ArtistView from '../views/ArtistView.vue'
 import MvView from '../views/MvView.vue'
 import YoutubeView from '../views/YoutubeView.vue'
 import UnsplashView from '../views/UnsplashView.vue'
@@ -16,9 +16,9 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/intro',
-      name: 'intro',
-      component: IntroView
+      path: '/artist',
+      name: 'artist',
+      component: ArtistView
     },
     {
       path: '/mv',

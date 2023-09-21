@@ -82,7 +82,7 @@ export default {
 
         .mv-info {
           display: flex;
-          align-items: center;
+          align-items: left;
           margin-top: 10px;
 
           .pic {
@@ -100,6 +100,8 @@ export default {
               color: var(--color_body);
             }
             span {
+              display: block;
+              text-align: left;
               font-size: 16px;
               color: #243a4b;
             }

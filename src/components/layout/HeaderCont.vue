@@ -3,10 +3,10 @@ import { headerNav } from '@/constants/index';
 </script>
 
 <template>
-  <header id="header" role="header" :class="{ active: scrollActive }">
+  <header id="header" role="header" :class="{ active: scrollActive, 'router-active': $store.state.headerClass }">
     <div class="header-inner container">
       <h1 class="header-logo left">
-        <router-link to="/">Seoeun<em>Vue-Site</em></router-link>
+        <router-link to="/" @click="$store.commit('scrollTop')">Seoeun<em>Vue-Site</em></router-link>
       </h1>
       <nav class="header-gnb left" role="navigation" aria-label="메인 메뉴">
         <ul>
@@ -29,6 +29,8 @@ export default {
       scrollActive: false
     };
   },
+  computed: {},
+  created() {},
   mounted() {
     document.addEventListener('scroll', this.handleScroll);
   },
@@ -158,9 +160,12 @@ export default {
 }
 .active {
   background-color: var(--white);
-  // border-bottom: 1px solid #eee;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border: 0;
   color: #222 !important;
+}
+.router-active {
+  background-color: var(--white);
+  border-bottom: 1px solid #eee !important;
 }
 </style>

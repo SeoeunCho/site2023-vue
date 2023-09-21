@@ -1,3 +1,0 @@
-<template>
-  IntroCont
-  </template>

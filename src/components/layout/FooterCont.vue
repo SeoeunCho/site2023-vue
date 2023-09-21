@@ -29,7 +29,7 @@
             <h4>아티스트</h4>
             <ul>
               <li>
-                <router-link to="/intro">장르별 아티스트 페이지</router-link>
+                <router-link to="/artist">장르별 아티스트 페이지</router-link>
               </li>
             </ul>
           </div>

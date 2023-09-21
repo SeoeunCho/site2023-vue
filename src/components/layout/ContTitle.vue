@@ -20,7 +20,6 @@ export default {
     text-align: center;
     font-size: 5vw;
     text-transform: uppercase;
-    padding: 5%;
     font-weight: bold;
   }
 }

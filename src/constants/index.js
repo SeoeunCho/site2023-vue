@@ -1,7 +1,7 @@
 export const headerNav = [
   {
     title: '아티스트',
-    url: '/intro'
+    url: '/artist'
   },
   {
     title: '뮤직비디오',
@@ -21,7 +21,7 @@ export const headerNav = [
   }
 ];
 
-export const IntroText = {
+export const introText = {
   title: 'Music 4 U<br />장르음악',
   desc: '음악은 다양한 장르들로 이루어져 있습니다.<br />장르별 아티스트를 소개합니다.<br />즐거운 음악 여행을 시작해봅시다!',
   genres: [
@@ -52,7 +52,7 @@ export const sliderText = [
     image2: './img/icon/icon12.svg',
     image3: './img/icon/icon11.svg',
     linkText: '아티스트',
-    link: '/intro',
+    link: '/artist',
     link1: '/mv',
     link2: '/youtube'
   },
@@ -141,5 +141,5 @@ export const youtubeText = [
     img: './img/youtube/youtube04.svg',
     title: '(여자)아이들((G)I-DLE) - 퀸카',
     link: 'https://www.youtube.com/watch?v=7HDeem-JaSY'
-  },
+  }
 ];

@@ -1,5 +1,5 @@
 <script setup>
-import { IntroText } from '@/constants/index';
+import { introText } from '@/constants/index';
 </script>
 
 <template>
@@ -8,12 +8,12 @@ import { IntroText } from '@/constants/index';
     <div class="intro-inner container">
       <div class="intro-title">
         <span>Music Genre by Artists</span>
-        <h3 v-html="IntroText.title"></h3>
-        <p v-html="IntroText.desc"></p>
-        <router-link to="/intro">자세히 보기</router-link>
+        <h3 v-html="introText.title"></h3>
+        <p v-html="introText.desc"></p>
+        <router-link to="/artist">자세히 보기</router-link>
       </div>
       <div class="intro-desc">
-        <div v-for="(text, index) in IntroText.genres" :key="index">
+        <div v-for="(text, index) in introText.genres" :key="index">
           <h4 :class="'icon-bg' + (index + 1)">{{ text.title }}</h4>
           <p>
             {{ text.desc }}
@@ -28,7 +28,7 @@ import { IntroText } from '@/constants/index';
 export default {};
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
 
 #intro {
