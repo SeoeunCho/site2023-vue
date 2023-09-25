@@ -1,5 +1,5 @@
 <script setup>
-import { sliderText } from '@/constants/index';
+import { sliderSectionData } from '@/constants/index';
 </script>
 
 <template>
@@ -16,18 +16,16 @@ import { sliderText } from '@/constants/index';
         @swiper="onSwiper"
         @slideChange="onSlideChange"
       >
-        <swiper-slide v-for="(slider, index) in sliderText" :key="index">
-          <div class="slider-img">
-            <div class="slider s1">
-              <div class="text">
-                <h3 v-if="index === 0" v-html="slider.title" :style="{ color: 'var(--white)' }"></h3>
-                <h3 v-if="index !== 0" v-html="slider.title"></h3>
+        <swiper-slide v-for="(slider, i) in sliderSectionData" :key="i">
+          <div class="slider-cont">
+            <div class="slider-box">
+              <div class="slider-text">
+                <h3 v-if="i === 0" v-html="slider.title" :style="{ color: 'var(--white)' }"></h3>
+                <h3 v-if="i !== 0" v-html="slider.title"></h3>
                 <p v-html="slider.desc"></p>
-                <a :class="`more${index + 1} mr10`" :href="slider.link">{{ slider.linkText }} 바로가기</a>
-                <a v-if="swiperIdx === 0" class="more1 mr10" :href="slider.link1">MV 바로가기</a>
-                <a v-if="swiperIdx === 0" class="more1" :href="slider.link2">유튜브 바로가기</a>
+                <a :class="`more${i + 1} mr10`" :href="slider.link">{{ slider.linkText }} 바로가기</a>
               </div>
-              <div class="img" aria-label="hidden">
+              <div class="slider-img" aria-label="hidden">
                 <img :src="slider.image2" alt="마이크" />
                 <img :src="slider.image1" alt="유튜브" />
                 <img :src="slider.image3" alt="헤드셋" />
@@ -56,7 +54,6 @@ import 'swiper/css/pagination';
 export default {
   data() {
     return {
-      sliderText: sliderText,
       swiperIdx: 0,
       modules: [Autoplay, Pagination]
     };
@@ -81,12 +78,12 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
 
 #slider {
   padding: 180px 0px 85px;
-
+  
   .slider-inner {
     position: relative;
 
@@ -94,32 +91,22 @@ export default {
       font-weight: bold;
     }
 
-    .slider-img {
+    .slider-cont {
       max-width: 1320px;
       margin: 0 auto;
       padding: 0px 185px;
 
-      .slider {
+      .slider-box {
         margin-top: 20px;
         position: relative;
 
-        .text {
+        .slider-text {
           h3 {
             font-size: 90px;
             font-weight: 800;
             text-transform: uppercase;
             line-height: 1;
             margin-bottom: 30px;
-
-            em {
-              color: #ff3344;
-            }
-            .youtube {
-              color: #4857ec;
-            }
-            .movie {
-              color: #00c183;
-            }
           }
         }
         p {
@@ -167,7 +154,7 @@ export default {
             color: #fff;
           }
         }
-        .img {
+        .slider-img {
           position: absolute;
           right: 0px;
           top: -10px;

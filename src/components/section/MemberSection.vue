@@ -1,3 +1,0 @@
-<template>
-  MemberSection
-  </template>

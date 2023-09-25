@@ -22,7 +22,7 @@ Prettier, ESlint를 이용해 문법에 오류가 없도록 작업하며 코드�
 
 ## 사용 스택
 - vue(https://ko.vuejs.org/) 를 사용하여 사이트를 번들링하고 관리합니다.
-- YoutubeAPI(https://console.cloud.google.com/apis/) 를 이용하여 유튜브 목록, 검색 기능을 구현합니다.
+- YoutubeAPI(https://developers.google.com/youtube/v3/getting-started?hl=ko) 를 이용하여 유튜브 목록, 검색 기능을 구현합니다.
 - Unsplash API(https://unsplash.com/ko) 를 postman이용하여 이미지 목록, 검색, 이미지슬라이드를 기능을 구현합니다.
 - TMDB API(https://www.themoviedb.org/?language=ko) 를 이용하여 영화 목록, 검색, 이미지슬라이드를 기능을 구현합니다.
 - Postman(https://www.postman.com/) 을 이용하여 restfulAPI를 요청하여 데이터를 분류하고 원하는 데이터만 가져와서 사용합니다.

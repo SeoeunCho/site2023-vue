@@ -122,3 +122,16 @@ fieldset,
 button {
   border: 0;
 }
+
+button {
+  text-align: center;
+  color: #222;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+input {
+  &:focus {
+    outline: 2px solid #000;
+  }
+}

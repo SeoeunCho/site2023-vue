@@ -1,8 +1,8 @@
 <script setup>
 import SliderSection from '@/components/section/SliderSection.vue';
-import IntroSection from '@/components/section/IntroSection.vue';
+import ArtistSection from '@/components/section/ArtistSection.vue';
 import MvSection from '@/components/section/MvSection.vue';
-import YoutubeSection from '@/components/section/YoutubeSection.vue';
+import PlaylistSection from '@/components/section/PlaylistSection.vue';
 import UnsplashSection from '@/components/section/UnsplashSection.vue';
 import MovieSection from '@/components/section/MovieSection.vue';
 </script>
@@ -10,10 +10,24 @@ import MovieSection from '@/components/section/MovieSection.vue';
 <template>
   <main id="main" role="main">
     <SliderSection />
-    <IntroSection />
+    <ArtistSection />
     <MvSection />
-    <YoutubeSection />
+    <PlaylistSection />
     <UnsplashSection />
     <MovieSection />
   </main>
 </template>
+
+<style lang="scss">
+h3 {
+  .youtube {
+    color: #ff3344;
+  }
+  .unsplash {
+    color: #4857ec;
+  }
+  .movie {
+    color: #00c183;
+  }
+}
+</style>

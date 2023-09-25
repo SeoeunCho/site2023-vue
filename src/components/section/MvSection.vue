@@ -1,5 +1,5 @@
 <script setup>
-import { mvText } from '@/constants/index';
+import { mvSectionData } from '@/constants/index';
 </script>
 
 <template>
@@ -10,15 +10,15 @@ import { mvText } from '@/constants/index';
       <router-link to="/mv" class="button-violet">더 많은 MV 보러가기</router-link>
 
       <div class="mv-cont">
-        <div class="mv-item" v-for="(mv, index) in mvText" :key="index">
+        <div class="mv-item" v-for="(mv, i) in mvSectionData" :key="i">
           <figure class="mv-main">
             <a :href="mv.link">
-              <img :src="mv.img" :alt="'아이들' + (index + 1)" />
+              <img :src="mv.img" :alt="mv.title" />
             </a>
           </figure>
           <div class="mv-info">
             <div class="pic">
-              <img :src="mv.icon" alt="아이들" />
+              <img :src="mv.icon" :alt="mv.title" />
             </div>
             <div class="title">
               <h4>{{ mv.title }}</h4>
@@ -39,7 +39,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
 
 #mv {

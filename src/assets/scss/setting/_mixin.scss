@@ -29,7 +29,7 @@
 }
 
 /* 한줄 효과 */
-@mixin line {
+@mixin line-ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

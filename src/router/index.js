@@ -1,10 +1,10 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import ArtistView from '../views/ArtistView.vue'
-import MvView from '../views/MvView.vue'
-import YoutubeView from '../views/YoutubeView.vue'
-import UnsplashView from '../views/UnsplashView.vue'
-import MovieView from '../views/MovieView.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import HomeView from '../views/HomeView.vue';
+import ArtistView from '../views/ArtistView.vue';
+import MvView from '../views/MvView.vue';
+import PlaylistView from '../views/PlaylistView.vue';
+import UnsplashView from '../views/UnsplashView.vue';
+import MovieView from '../views/MovieView.vue';
 
 const router = createRouter({
   // history: createWebHistory(process.env.BASE_URL),
@@ -26,9 +26,9 @@ const router = createRouter({
       component: MvView
     },
     {
-      path: '/youtube',
-      name: 'youtube',
-      component: YoutubeView
+      path: '/playlist',
+      name: 'playlist',
+      component: PlaylistView
     },
     {
       path: '/unsplash',
@@ -41,6 +41,6 @@ const router = createRouter({
       component: MovieView
     }
   ]
-})
+});
 
-export default router
+export default router;

@@ -26,26 +26,16 @@
       <div class="footer-menu">
         <div class="footer-menu">
           <div>
-            <h4>아티스트</h4>
+            <h4>유튜브</h4>
             <ul>
               <li>
                 <router-link to="/artist">장르별 아티스트 페이지</router-link>
               </li>
-            </ul>
-          </div>
-          <div>
-            <h4>뮤직비디오</h4>
-            <ul>
               <li>
                 <router-link to="/mv">뮤직비디오 페이지</router-link>
               </li>
-            </ul>
-          </div>
-          <div>
-            <h4>유튜브</h4>
-            <ul>
               <li>
-                <router-link to="/youtube">유튜브 페이지</router-link>
+                <router-link to="/playlist">플레이리스트 페이지</router-link>
               </li>
             </ul>
           </div>
@@ -69,17 +59,17 @@
             <ul>
               <li>
                 <a href="https://github.com/SeoeunCho">
-                  <span class="ir">깃허브</span>
+                  <span class="txt-hidden">깃허브</span>
                 </a>
               </li>
               <li>
                 <a href="https://enchanting-drip-66d.notion.site/661e000688d04abf94686ae02d8983ff?pvs=4/">
-                  <span class="ir">노션 이력서</span>
+                  <span class="txt-hidden">노션 이력서</span>
                 </a>
               </li>
               <li>
                 <a href="https://open.kakao.com/o/sTuSneIf">
-                  <span class="ir">카카오톡</span>
+                  <span class="txt-hidden">카카오톡</span>
                 </a>
               </li>
             </ul>
@@ -91,7 +81,7 @@
   </footer>
 </template>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
 #footer {
   color: #eee;

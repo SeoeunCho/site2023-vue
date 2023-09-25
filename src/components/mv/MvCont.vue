@@ -1,14 +1,11 @@
 <template>
-  <div class="movie__cont container">
+  <div class="mv-cont">
     <ul>
-      <li v-for="(movie, index) in movies" :key="index">
-        <a :href="`https://www.themoviedb.org/movie/${movie.id}?language=ko`" target="_blank">
-          <img :src="`https://image.tmdb.org/t/p/w500/${movie.poster_path}`" :alt="movie.title" />
+      <li v-for="(mv, index) in mvList" :key="index">
+        <a :href="'https://www.youtube.com/watch?v=' + mv.id.videoId" target="_blank" rel="noopener noreferrer">
+          <img :src="mv.snippet.thumbnails.medium.url" alt="mv" />
+          <span v-html="mv.snippet.title"></span>
         </a>
-        <em>
-          <span class="title">{{ movie.title }}</span>
-          <span class="star">{{ movie.vote_average.toFixed(1) }}</span>
-        </em>
       </li>
     </ul>
   </div>
@@ -17,46 +14,45 @@
 <script>
 export default {
   props: {
-    movies: {
+    mvList: {
       type: Array,
       required: true
+    }
+  },
+  methods: {
+    decodeEntities(text) {
+      const txt = document.createElement('textarea');
+      txt.innerHTML = text;
+      return txt.value;
     }
   }
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
-.movie__cont {
+.mv-cont {
   ul {
-    display: flex;
+    @include flex-between;
     flex-wrap: wrap;
-    justify-content: space-between;
+    margin-bottom: 100px;
+    margin-top: 40px;
+
     li {
       width: 24%;
-      margin-bottom: 2%;
-      position: relative;
-      .title {
-        display: inline-block;
-        padding: 5px 0;
-        font-size: 20px;
-        font-weight: bold;
-        &:hover {
-          text-decoration: underline;
-          text-underline-position: under;
-        }
+      margin-bottom: 28px;
+
+      img {
+        @include border(10px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
-      .star {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        width: 30px;
-        height: 30px;
-        background-color: #fff;
-        text-align: center;
-        line-height: 30px;
-        border-radius: 50%;
-        font-size: 12px;
+
+      span {
+        display: block;
+        margin: 10px 0;
+        font-size: 17px;
+        font-weight: 600;
+        @include line-ellipsis;
       }
     }
   }
