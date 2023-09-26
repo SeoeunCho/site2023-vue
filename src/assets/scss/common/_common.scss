@@ -8,13 +8,14 @@
 
 /* section */
 .section {
-  padding: 120px 0;
+  padding: 100px 0;
 
   > div {
-    > h3 {
+    h3 {
+      margin-bottom: 40px;
       font-size: 42px;
-      font-weight: bold;
-      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 800;
     }
 
     > p {
@@ -31,8 +32,8 @@
 
 /* page */
 .page {
-  top: 78px;
-  margin: 70px auto 170px;
+  top: 80px;
+  margin: 70px auto 200px;
 }
 
 /* cont-title */
@@ -87,10 +88,63 @@
       border: 1px solid var(--main-color);
       background-color: var(--main-color);
     }
+    button.activeBk {
+      color: var(--white);
+      border: 1px solid var(--black);
+      background-color: var(--black);
+    }
   }
 }
 .sch-area.center {
   text-align: center;
+}
+.sch-area.column {
+  height: 75px;
+
+  .search {
+    width: auto;
+    margin: 0;
+  }
+}
+
+/* search */
+.search {
+  margin-top: 30px;
+  width: 100%;
+  height: auto;
+
+  .search-box {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    height: 45px;
+
+    input {
+      width: 300px;
+      height: 45px;
+      padding: 0 50px 0 15px;
+      background-color: #f7f7f7;
+      border: none;
+      font-size: 14px;
+      color: var(--black);
+      box-sizing: border-box;
+      @include border(10px);
+    }
+    button {
+      position: absolute;
+      top: 0;
+      right: 15px;
+      width: 30px;
+      height: 45px;
+      background-image: url(../../assets/img/icon/btn_search.png);
+      background-color: transparent;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 20px auto;
+      cursor: pointer;
+    }
+  }
 }
 
 /* txt-hidden */
@@ -111,20 +165,24 @@
 
 /* button */
 .button-violet {
-  @include button(#4857ec, #ffffff);
-  @include border(50px);
+  @include button(#494693, #ffffff);
+  @include border(10px);
 }
-.button-red {
-  @include button(#ff3344, #ffffff);
-  @include border(50px);
+.button-pink {
+  @include button(#ee2375, #ffffff);
+  @include border(10px);
 }
-.button-blue {
-  @include button(#00f, #ffffff);
-  @include border(50px);
+.button-yellow {
+  @include button(#ff9f17, #ffffff);
+  @include border(10px);
 }
 .button-green {
-  @include button(#00c183, #ffffff);
-  @include border(50px);
+  @include button(#00bab7, #ffffff);
+  @include border(10px);
+}
+.button-blue {
+  @include button(#009fff, #ffffff);
+  @include border(10px);
 }
 
 /* icon */

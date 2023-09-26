@@ -3,6 +3,7 @@ import { headerNavList } from '@/constants/index';
 </script>
 
 <template>
+  <!-- S: header -->
   <header id="header" role="header" :class="{ active: scrollActive, 'router-active': $store.state.headerClass }">
     <div class="header-inner container">
       <h1 class="header-logo left">
@@ -12,11 +13,12 @@ import { headerNavList } from '@/constants/index';
         <ul>
           <li class="depth01 left" v-for="(nav, i) in headerNavList" :key="i">
             <router-link :to="nav.url" target>{{ nav.title }}</router-link>
-            <!-- <router-link :to="nav.url" target>{{ nav.title }}</router-link> -->
-            <ul class="depth02-list" v-if="nav.key === 'youtube'">
-              <li class="depth02"><router-link :to="nav.link[0]">아티스트</router-link></li>
-              <li class="depth02"><router-link :to="nav.link[1]">뮤직비디오</router-link></li>
-              <li class="depth02"><router-link :to="nav.link[2]">플레이리스트</router-link></li>
+            <ul class="depth02-list" v-if="nav.subMenu">
+              <template v-for="(item, i) in nav.subMenu" :key="i">
+                <li class="depth02">
+                  <router-link :to="item.url">{{ item.title }}</router-link>
+                </li>
+              </template>
             </ul>
           </li>
         </ul>
@@ -26,26 +28,31 @@ import { headerNavList } from '@/constants/index';
       </div>
     </div>
   </header>
+  <!-- E: header -->
+  <!-- S: site-map -->
   <div id="site-map" class="allmenu" :class="{ active: allMenuActive }">
     <div class="header-inner container">
       <div class="menu-top">
         <h1 class="header-logo left" @click="showSiteMap">
           <router-link to="/" @click="$store.commit('scrollTop')">Seoeun<em>Vue-Site</em></router-link>
         </h1>
-        <button class="btn-close text-hidden" @click="showSiteMap">닫기</button>
+        <button class="btn-close txt-hidden" @click="showSiteMap">닫기</button>
       </div>
       <ul class="allmenu-list">
         <li v-for="(nav, i) in headerNavList" :key="i" @click="showSiteMap">
           <router-link :to="nav.url">{{ nav.title }}</router-link>
-          <ul class="gnb-depth" v-if="nav.key === 'youtube'">
-            <li class="depth02"><router-link :to="nav.link[0]">아티스트</router-link></li>
-            <li class="depth02"><router-link :to="nav.link[1]">뮤직비디오</router-link></li>
-            <li class="depth02"><router-link :to="nav.link[2]">플레이리스트</router-link></li>
+          <ul class="gnb-depth" v-if="nav.subMenu">
+            <template v-for="(item, i) in nav.subMenu" :key="i">
+              <li class="depth02">
+                <router-link :to="item.url">{{ item.title }}</router-link>
+              </li>
+            </template>
           </ul>
         </li>
       </ul>
     </div>
   </div>
+  <!-- E: site-map -->
 </template>
 
 <script>
@@ -68,7 +75,7 @@ export default {
   },
   methods: {
     handleScroll() {
-      if (window.scrollY > 78) {
+      if (window.scrollY > 0) {
         this.scrollActive = true;
       } else {
         this.scrollActive = false;
@@ -101,13 +108,25 @@ export default {
 
   &:hover {
     background-color: var(--white);
+
+    .depth01 {
+      a {
+        color: var(--black);
+      }
+    }
   }
 
   &.active {
     background-color: var(--white);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 0;
-    color: #222 !important;
+    color: var(--black);
+
+    .depth01 {
+      a {
+        color: var(--black);
+      }
+    }
   }
   &.router-active {
     background-color: var(--white);
@@ -177,12 +196,12 @@ export default {
             font-size: 24px;
             font-weight: 700;
             padding-bottom: 12px;
-            border-bottom: 2px solid #222;
+            border-bottom: 2px solid var(--black);
             position: relative;
             width: 100%;
 
             pointer-events: all;
-            color: #222 !important;
+            color: var(--black) !important;
 
             &::before {
               content: '';
@@ -243,13 +262,13 @@ export default {
       color: var(--main-color);
       font-size: 30px;
       text-transform: uppercase;
-      font-weight: 800;
+      font-weight: 900;
 
       em {
         color: var(--sub-color);
         font-size: 12px;
         display: block;
-        font-weight: 500;
+        font-weight: 600;
       }
     }
   }
@@ -258,14 +277,19 @@ export default {
     .depth01 {
       margin: 0 24px;
       position: relative;
+      color: var(--white);
 
       > a {
         display: block;
         position: relative;
         font-size: 18px;
-        line-height: 78px;
+        line-height: 80px;
         text-align: center;
-        color: #222 !important;
+        color: var(--white);
+
+        &:hover {
+          color: var(--black) !important;
+        }
 
         &::before {
           position: absolute;
@@ -306,7 +330,7 @@ export default {
           height: 3px;
           position: relative;
           z-index: 1;
-          margin-top: -16px;
+          margin-top: -18px;
           background-color: var(--main-color);
         }
         &:hover::after {
@@ -329,7 +353,7 @@ export default {
         display: none;
 
         .depth02 {
-          color: #222;
+          color: var(--black);
           letter-spacing: -0.025em;
           padding: 10px;
           font-size: 16px;
@@ -343,16 +367,14 @@ export default {
         }
       }
 
-      &:nth-child(1) {
-        &:hover .depth02-list {
-          display: block;
-        }
+      &:hover .depth02-list {
+        display: block;
       }
     }
   }
   .header-right {
     float: right;
-    padding: 17px 0;
+    padding: 18px 0;
 
     .btn-allmenu {
       width: 45px;

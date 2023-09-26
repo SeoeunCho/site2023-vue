@@ -14,7 +14,7 @@ export default {};
   width: 60px;
   height: 60px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  background-color: #222;
+  background-color: var(--black);
   color: var(--white);
   padding-top: 15px;
   background-image: url(../../assets/img/icon/btn_top.png);

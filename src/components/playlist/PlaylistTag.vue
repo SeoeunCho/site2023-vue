@@ -1,14 +1,21 @@
+<script setup>
+import { playlistTagData } from '@/constants/index';
+</script>
+
 <template>
-  <div class="btn-box">
+  <div class="btn-box" v-for="(row, i) in dividedTags" :key="i">
     <h2 class="txt-hidden">플레이리스트 태그</h2>
-    <button
-      v-for="(tag, i) in playlistTags"
-      :key="i"
-      :class="{ active: tag.name === activeTag }"
-      @click="btnClick(tag.name)"
-    >
-      {{ tag.name }}
-    </button>
+    <template v-for="(tag, i) in row" :key="i">
+      <button
+        :class="{
+          activeBk: tag.name === '전체' && activeTag === '전체',
+          active: tag.name !== '전체' && tag.name === activeTag
+        }"
+        @click="btnClick(tag.name)"
+      >
+        {{ tag.name }}
+      </button>
+    </template>
   </div>
 </template>
 
@@ -17,20 +24,36 @@ export default {
   props: ['onSearch'],
   data() {
     return {
-      playlistTags: [
-        { name: 'K-POP' },
-        { name: '팝송' },
-        { name: '힙합' },
-        { name: '알앤비' },
-        { name: '플레이리스트' }
-      ],
-      activeTag: '' // 선택된 태그를 저장할 데이터
+      activeTag: '전체' // 선택된 태그를 저장할 데이터
     };
   },
+  created() {},
+  computed: {
+    dividedTags() {
+      const chunkSize = 4; // 한 줄에 표시할 버튼 수
+      const dividedList = [];
+      let currentRow = [];
+
+      for (let i = 0; i < playlistTagData.length; i++) {
+        currentRow.push(playlistTagData[i]);
+
+        if (dividedList.length === 0 && currentRow.length === chunkSize) {
+          dividedList.push(currentRow);
+          currentRow = [];
+        }
+      }
+
+      if (currentRow.length > 0) {
+        dividedList.push(currentRow);
+      }
+      return dividedList;
+    }
+  },
   methods: {
-    btnClick(name) {
-      this.activeTag = name; // 선택된 태그를 activeTag에 설정
-      this.onSearch(name);
+    btnClick(tag) {
+      this.activeTag = tag; // 선택된 태그를 activeTag에 설정
+      if (this.activeTag === '전체') tag = 'playlist';
+      this.onSearch(tag);
     }
   }
 };

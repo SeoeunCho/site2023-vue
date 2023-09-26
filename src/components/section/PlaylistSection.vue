@@ -3,18 +3,26 @@ import { playlistSectionData } from '@/constants/index';
 </script>
 
 <template>
-  <section id="playlist" class="section">
+  <section id="playlist" class="section center">
+    <h3 class="txt-hidden">플레이리스트 섹션</h3>
     <div class="playlist-inner container">
-      <h3>당신의 음악 취향을 충족시킬 유튜버</h3>
-      <p>음악의 다양한 매력을 느끼게 해주는<br />음악을 사랑하는 이들을 위한 열정이 가득한 유튜버들을 만나보세요.</p>
-      <router-link to="/playlist" class="button-red">자세히 보기</router-link>
+      <h3>취향껏 즐기는 플레이리스트</h3>
+      <p>지금 듣고 싶은 음악은?<br />기억으로 남게 될 <strong>플레이리스트</strong>를 유튜브 검색으로 찾아보세요.</p>
+      <router-link to="/playlist" class="button-green">자세히 보기</router-link>
 
-      <div class="playlist-item">
-        <div v-for="(video, i) in playlistSectionData" :key="i">
-          <a :href="video.link">
-            <img :src="video.img" :alt="video.title" />
-          </a>
-          <span>{{ video.title }}</span>
+      <div class="playlist-cont">
+        <div class="playlist-item" v-for="(video, i) in playlistSectionData" :key="i">
+          <figure class="playlist-main">
+            <a :href="video.link">
+              <img :src="video.img" :alt="video.title" />
+              <span class="play-icon"></span>
+            </a>
+          </figure>
+          <div class="playlist-info">
+            <div class="title">
+              <h4>{{ video.title }}</h4>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -27,116 +35,116 @@ export default {};
 
 <style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
+
 #playlist {
   background-color: var(--subBg300);
 
   .playlist-inner {
-    height: 600px;
+    .playlist-btn {
+      margin-bottom: 30px;
 
-    .playlist-item {
+      ul {
+        display: flex;
+        justify-content: center;
+
+        li {
+          a {
+            @include border(50px);
+            display: inline-block;
+            padding: 10px 30px;
+            margin: 0 5px;
+            transition: all 0.3s;
+            color: var(--white);
+            background-color: #83a5f9;
+
+            &:hover {
+              background-color: #3617ce;
+              color: var(--white);
+            }
+          }
+        }
+      }
+    }
+    .playlist-cont {
       @include flex-between;
-      margin-top: 70px;
-      width: auto;
-      position: absolute;
 
-      > div {
-        width: 400px;
-        margin-right: 20px;
+      .playlist-item {
+        width: 32.2222%;
+        height: auto;
+        margin-bottom: 30px;
 
-        img {
-          width: 100%;
-          margin-bottom: 20px;
-          @include border(10px);
+        .playlist-main {
+          > a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            top: 0;
+            left: 0;
+
+            img {
+              width: 100%;
+              height: 100%;
+              border-radius: 20px;
+              opacity: 0.9;
+              max-width: 100%;
+              border: 0;
+              display: block;
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            .play-icon {
+              width: 50px;
+              height: 50px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              background: url(@/assets/img/icon/play.png) no-repeat center;
+              background-size: 100%;
+              z-index: 1000;
+            }
+          }
         }
 
-        span {
-          font-size: 20px;
+        .playlist-info {
+          display: flex;
+          align-items: left;
+          margin-top: 10px;
+
+          .title {
+            width: 100%;
+            text-align: left;
+            h4 {
+              @include line-ellipsis;
+              font-size: 20px;
+              font-weight: 600;
+              color: #222;
+              word-break: keep-all;
+              color: var(--color_body);
+            }
+            span {
+              display: block;
+              font-size: 16px;
+            }
+          }
+        }
+
+        img {
+          @include border(20px);
+          width: 100%;
+        }
+
+        &:nth-child(4) {
+          margin-bottom: 0;
+        }
+        &:nth-child(5) {
+          margin-bottom: 0;
+        }
+        &:nth-child(6) {
+          margin-bottom: 0;
         }
       }
     }
   }
-
-  // .playlist-page {
-  // }
-  // .playlist-slider {
-  //   display: none;
-  // }
-  // .playlist-search {
-  //   text-align: center;
-  //   margin-bottom: 50px;
-
-  //   input {
-  //     border: 1px solid #e8ecf2;
-  //     font-size: 16px;
-  //     padding: 10px 20px;
-  //     @include border(50px);
-  //     min-width: 300px;
-  //     margin-right: 10px;
-  //   }
-  //   button {
-  //     @include button(#f7100d, #fff);
-  //     @include border(50px);
-  //   }
-  // }
-  // .playlist-tag {
-  //   ul {
-  //     display: flex;
-  //     justify-content: center;
-  //     margin-top: 100px;
-  //     margin-bottom: 50px;
-
-  //     li {
-  //       a {
-  //         border: 1px solid #f7100d;
-  //         padding: 10px 20px;
-  //         margin: 0 10px;
-  //         color: #f7100d;
-  //       }
-  //     }
-  //   }
-  // }
-  // .playlist-cont {
-  //   ul {
-  //     display: flex;
-  //     flex-wrap: wrap;
-  //     justify-content: space-between;
-  //     margin-bottom: 100px;
-
-  //     li {
-  //       width: 24%;
-  //       margin-bottom: 4%;
-
-  //       img {
-  //         width: 100%;
-  //         @include border(20px);
-  //       }
-
-  //       span {
-  //         display: block;
-  //         margin: 4px 0;
-  //         overflow: hidden;
-  //         text-overflow: ellipsis;
-  //         white-space: nowrap;
-  //       }
-  //     }
-  //   }
-  // }
-  // .playlist-tag {
-  //   ul {
-  //     display: flex;
-  //     justify-content: center;
-  //     margin-top: 100px;
-  //     margin-bottom: 50px;
-
-  //     li {
-  //       a {
-  //         border: 1px solid #f7100d;
-  //         padding: 10px 20px;
-  //         margin: 0 10px;
-  //         color: #f7100d;
-  //       }
-  //     }
-  //   }
-  // }
 }
 </style>

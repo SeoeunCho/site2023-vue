@@ -21,13 +21,13 @@ import MovieSection from '@/components/section/MovieSection.vue';
 <style lang="scss">
 h3 {
   .youtube {
-    color: #ff3344;
+    color: var(--main-color);
   }
   .unsplash {
-    color: #4857ec;
+    color: #00bab7;
   }
   .movie {
-    color: #00c183;
+    color: #ff9f17;
   }
 }
 </style>

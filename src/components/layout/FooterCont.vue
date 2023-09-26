@@ -48,10 +48,13 @@
             </ul>
           </div>
           <div>
-            <h4>영화</h4>
+            <h4>영화 & TV</h4>
             <ul>
               <li>
                 <router-link to="/movie">영화 페이지</router-link>
+              </li>
+              <li>
+                <router-link to="/tv">TV 프로그램 페이지</router-link>
               </li>
             </ul>
           </div>
@@ -102,7 +105,7 @@
 
       h5 {
         font-size: 26px;
-        font-weight: 600;
+        font-weight: 700;
         margin-right: 30px;
       }
       p {

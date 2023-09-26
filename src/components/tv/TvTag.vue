@@ -1,17 +1,14 @@
 <script setup>
-import { unsplashTagData } from '@/constants/index';
+import { tvTagData } from '@/constants/index';
 </script>
 
 <template>
   <div class="btn-box left">
-    <h2 class="txt-hidden">언스플래쉬 이미지 태그</h2>
+    <h2 class="txt-hidden">TV 프로그램 태그</h2>
     <button
-      v-for="(tag, index) in unsplashTagData"
+      v-for="(tag, index) in tvTagData"
       :key="index"
-      :class="{
-        activeBk: tag.name === '전체' && activeTag === '전체',
-        active: tag.name !== '전체' && tag.name === activeTag
-      }"
+      :class="{ active: tag.name === activeTag }"
       @click="btnClick(tag.name, tag.eng)"
     >
       {{ tag.name }}
@@ -21,15 +18,10 @@ import { unsplashTagData } from '@/constants/index';
 
 <script>
 export default {
-  props: {
-    onSearch: {
-      type: Function,
-      required: true
-    }
-  },
+  props: ['onSearch'],
   data() {
     return {
-      activeTag: '전체' // 액티브 태그를 저장할 속성 추가
+      activeTag: '인기 TV 프로그램' // 액티브 태그를 저장할 속성 추가
     };
   },
   methods: {
@@ -41,8 +33,10 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
-.unsplash-btn {
+<style lang="scss">
+@import '../../assets/scss/setting/mixin';
+
+.tv-btn {
   div {
     margin-bottom: 10px;
 

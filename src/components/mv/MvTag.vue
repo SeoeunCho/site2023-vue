@@ -4,9 +4,15 @@ import { mvTagData } from '@/constants/index';
 
 <template>
   <div class="btn-box" v-for="(row, i) in dividedTags" :key="i">
-    <h2 class="txt-hidden">뮤비태그</h2>
+    <h2 class="txt-hidden">뮤비 태그</h2>
     <template v-for="(tag, i) in row" :key="i">
-      <button :class="{ active: tag.name === activeTag }" @click="btnClick(tag.name)">
+      <button
+        :class="{
+          activeBk: tag.name === '전체' && activeTag === '전체',
+          active: tag.name !== '전체' && tag.name === activeTag
+        }"
+        @click="btnClick(tag.name)"
+      >
         {{ tag.name }}
       </button>
     </template>
@@ -15,11 +21,13 @@ import { mvTagData } from '@/constants/index';
 
 <script>
 export default {
+  props: ['onSearch'],
   data() {
     return {
-      activeTag: '' // 선택된 태그를 저장할 데이터
+      activeTag: '전체' // 선택된 태그를 저장할 데이터
     };
   },
+  created() {},
   computed: {
     dividedTags() {
       const chunkSize = 7; // 한 줄에 표시할 버튼 수
@@ -44,7 +52,8 @@ export default {
   methods: {
     btnClick(tag) {
       this.activeTag = tag; // 선택된 태그를 activeTag에 설정
-      this.$emit('search', tag);
+      if (this.activeTag === '전체') tag = 'mv';
+      this.onSearch(tag);
     }
   }
 };

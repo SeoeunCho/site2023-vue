@@ -19,13 +19,7 @@ export default {
       required: true
     }
   },
-  methods: {
-    decodeEntities(text) {
-      const txt = document.createElement('textarea');
-      txt.innerHTML = text;
-      return txt.value;
-    }
-  }
+  methods: {}
 };
 </script>
 
@@ -34,9 +28,6 @@ export default {
 .mv-cont {
   ul {
     @include flex-between;
-    flex-wrap: wrap;
-    margin-bottom: 100px;
-    margin-top: 40px;
 
     li {
       width: 24%;

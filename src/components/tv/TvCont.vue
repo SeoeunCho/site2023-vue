@@ -1,29 +1,29 @@
 <template>
-  <div class="movie-cont">
+  <div class="tv-cont">
     <ul>
-      <li class="item" v-for="(movie, index) in movies" :key="index">
+      <li class="item" v-for="(tv, index) in tvPrograms" :key="index">
         <div class="item-flip">
           <div class="item-img">
             <img
               :src="
-                movie.poster_path !== null
-                  ? `https://image.tmdb.org/t/p/w500${movie.poster_path}`
+                tv.poster_path !== null
+                  ? `https://image.tmdb.org/t/p/w500${tv.poster_path}`
                   : '/src/assets/img/icon/skeleton_tmdb.svg'
               "
-              :alt="movie.title"
+              :alt="tv.name"
             />
           </div>
           <div class="item-detail">
             <div class="item-detail-inner">
-              <h2 class="title">{{ movie.title }}</h2>
-              <p class="desc">{{ movie.overview }}</p>
+              <h2 class="title">{{ tv.name }}</h2>
+              <p class="desc">{{ tv.overview }}</p>
               <div class="watch-btn">
-                <div class="rating" :data-content="movie.vote_average.toFixed(1)">
+                <div class="rating" :data-content="tv.vote_average.toFixed(1)">
                   <i class="star"></i>
-                  {{ movie.vote_average.toFixed(1) }}
+                  {{ tv.vote_average.toFixed(1) }}
                 </div>
-                <span class="date">{{ getYear(movie.release_date) }}</span>
-                <a :href="`https://www.themoviedb.org/movie/${movie.id}?language=ko-KR`" target="_blank">자세히보기</a>
+                <span class="date">{{ getYear(tv.first_air_date) }}</span>
+                <a :href="`https://www.themoviedb.org/tv/${tv.id}?language=ko-KR`" target="_blank">자세히보기</a>
               </div>
             </div>
           </div>
@@ -36,7 +36,7 @@
 <script>
 export default {
   props: {
-    movies: {
+    tvPrograms: {
       type: Array,
       required: true
     }
@@ -52,7 +52,7 @@ export default {
 <style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
 @import url(https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css);
-.movie-cont {
+.tv-cont {
   ul {
     @include flex-between;
 
@@ -85,6 +85,7 @@ export default {
             height: 441px;
             @include border(10px);
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #dbdbdb;
           }
         }
 

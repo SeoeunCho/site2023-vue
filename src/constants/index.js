@@ -3,7 +3,11 @@ export const headerNavList = [
     title: '유튜브',
     key: 'youtube',
     url: '/artist',
-    link: ['/artist', '/mv', '/playlist']
+    subMenu: [
+      { title: '아티스트', url: '/artist' },
+      { title: '뮤직비디오', url: '/mv' },
+      { title: '플레이리스트', url: '/playlist' }
+    ]
   },
   {
     title: '이미지',
@@ -11,34 +15,41 @@ export const headerNavList = [
     url: '/unsplash'
   },
   {
-    title: '영화',
+    title: '영화 & TV',
     key: 'movie',
-    url: '/movie'
+    url: '/movie',
+    subMenu: [
+      { title: '영화', url: '/movie' },
+      { title: 'TV 프로그램', url: '/tv' }
+    ]
   }
 ];
 
 export const sliderSectionData = [
   {
-    title: 'Music &<br /><span class="youtube">Youtube</span>',
-    desc: '음악을 더욱 즐기는 방법으로 유튜브 페이지를 경험해 보세요.<br />여러분의 마음을 사로잡을 장르별 아티스트들의 음악과<br />새로운 세계로 데려다 주는 뮤직비디오로 음악 여행을 시작해 보세요.',
+    title: 'Music &&nbsp<p class="youtube">Youtube</p>',
+    subTitle: '유튜브 영상으로 더욱 풍부하게 즐기는 음악',
+    desc: '여러분의 마음을 사로잡을 장르별 아티스트들의 음악과<br />눈과 귀를 즐겁게 해주는 뮤직비디오를 감상할 수 있습니다.<br />새로운 공간으로 데려다 주는 플레이리스트로 음악 여행을 시작해 보세요.',
     image1: './img/icon/icon01.png',
     image2: './img/icon/icon12.svg',
     image3: './img/icon/icon11.svg',
     linkText: '유튜브',
-    link: '/artist'
+    link: '/mv'
   },
   {
-    title: 'Image &<br /><span class="unsplash">Unsplash</span>',
-    desc: 'Unsplash 사이트의 이미지를 검색할 수 있는 페이지를 소개합니다.<br />아름다운 풍경과 다양한 주제를 담은<br />고화질 이미지를 무료로 제공하는 사이트입니다.',
+    title: 'Image &&nbsp<p class="unsplash">Unsplash</p>',
+    subTitle: 'Unsplash 사이트의 이미지',
+    desc: '다양한 주제를 담은 가장 깔끔한<br />고화질 이미지를 무료로 제공합니다.',
     image1: './img/icon/icon09.png',
-    image2: './img/icon/icon03.png',
-    image3: './img/icon/icon10.png',
+    image2: './img/icon/icon10.png',
+    image3: './img/icon/icon03.png',
     linkText: '이미지',
     link: '/unsplash'
   },
   {
-    title: 'TV &<br /><span class="movie">Movie</span>',
-    desc: '여러분의 영화 관람을 더욱 특별하게 만들어 줄 페이지를 소개합니다.<br />이곳은 다양한 장르와 감동적인 이야기가 담긴 영화들을 제공합니다.<br />최신 영화부터 TV쇼까지 다양한 선택지를 찾아볼 수 있습니다.',
+    title: 'Movie &&nbsp<p class="movie">TV Program</p>',
+    subTitle: '전 세계의 모든 영화와 TV 프로그램',
+    desc: '인기, 상영중, 높은 평점 등의 다양한 필터링<br />전 세계의 모든 영화와 TV 프로그램을 검색하고 상세정보를 확인해보세요.',
     image1: './img/icon/icon02.png',
     image2: './img/icon/icon08.png',
     image3: './img/icon/icon04.png',
@@ -48,8 +59,8 @@ export const sliderSectionData = [
 ];
 
 export const artistSectionData = {
-  title: 'Music 4 U<br />장르음악',
-  desc: '음악은 다양한 장르들로 이루어져 있습니다.<br />장르별 아티스트를 소개합니다.<br />즐거운 음악 여행을 시작해봅시다!',
+  title: '장르별 아티스트 추천',
+  desc: '다양한 장르의 음악을 선사해주는 <strong>아티스트</strong>를 소개합니다.<br />유튜브 영상과 함께 즐거운 음악 여행을 시작해봅시다!',
   genres: [
     {
       title: '팝 (Pop)',
@@ -72,69 +83,158 @@ export const artistSectionData = {
 
 export const mvSectionData = [
   {
-    img: './img/mv/mv01.svg',
+    img: 'https://i.ytimg.com/vi/dZs_cLHfnNA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_1Dfi2h36DHgLk-z0sAzlS_B0UQ',
     title: 'LE SSERAFIM (르세라핌) ‘이브, 프시케 그리고 푸른 수염의 아내’ OFFICIAL M/V',
     desc: '조회수 6050만회 · 3개월 전',
-    icon: './img/mv/mv01_01.svg',
+    icon: 'https://yt3.ggpht.com/ytc/APkrFKaWqx5IfcKbi5z8FgPsM_kA6NQ2zTAx8gr27yQcdQ=s48-c-k-c0x00ffffff-no-rj',
     link: 'https://youtu.be/dZs_cLHfnNA?si=4Qxg-KegeVNP6V9k'
   },
   {
-    img: './img/mv/mv02.svg',
+    img: 'https://i.ytimg.com/vi/ArmDp-zijuc/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAEM94IxWekQBbD4awEKbgt3q11Sw',
     title: "NewJeans (뉴진스) 'Super Shy' Official MV",
     desc: '조회수 9039만회 · 2개월 전',
-    icon: './img/mv/mv02_01.svg',
+    icon: 'https://yt3.ggpht.com/ytc/APkrFKaWqx5IfcKbi5z8FgPsM_kA6NQ2zTAx8gr27yQcdQ=s48-c-k-c0x00ffffff-no-rj',
     link: 'https://youtu.be/ArmDp-zijuc?si=FgUjxgEbHsDEFSz-'
   },
   {
-    img: './img/mv/mv03.svg',
+    img: 'https://i.ytimg.com/vi/pG6iaOMV46I/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBPvSn1eXBCIzlg7ZxwPjL9dEtTag',
     title: "IVE 아이브 'Kitsch' MV",
-    desc: '조회수 9412만회 · 5개월 전',
-    icon: './img/mv/mv03_01.svg',
-    link: 'https://youtu.be/pG6iaOMV46I?si=4-wT8EVb3dAlkUvy'
+    desc: '조회수 9476만회 · 5개월 전',
+    icon: 'https://yt3.ggpht.com/ytc/AOPolaRp25cimsVuxcbbZcgjWFsTwmPP_ScPi8BDoEL5Hw=s68-c-k-c0x00ffffff-no-rj',
+    link: 'https://www.youtube.com/watch?v=pG6iaOMV46I'
   },
   {
-    img: './img/mv/mv04.svg',
-    title: "(여자)아이들((G)I-DLE) - '퀸카 (Queencard)' Official Music Video",
-    desc: '조회수 2.3억회 · 4개월 전',
-    icon: './img/mv/mv04_01.svg',
-    link: 'https://youtu.be/7HDeem-JaSY?si=4wVQhQwDj8XVjpBF'
+    img: 'https://i.ytimg.com/vi/AKg_9dn_VmA/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAwXKT9dklxn7YpY-t_aChZkwdTzA',
+    title: "(여자)아이들((G)I-DLE) - '퀸카 (Queencard)' M/V (Performance Ver.)",
+    desc: '조회수 4705만회 · 3개월 전',
+    icon: 'https://yt3.ggpht.com/ytc/APkrFKbGrI182ZniS64zKXUGr2CeJ9tMxoa9w90e6SaZkA=s88-c-k-c0x00ffffff-no-rj',
+    link: 'https://www.youtube.com/watch?v=AKg_9dn_VmA'
   },
   {
-    img: './img/mv/mv05.svg',
+    img: 'https://i.ytimg.com/vi/Os_heh8vPfs/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB_qbx-P9ZvFVjYha-ZEKaWOadgHA',
     title: "aespa 에스파 'Spicy' MV",
     desc: '조회수 1.1억회 · 4개월 전',
-    icon: './img/mv/mv05_01.svg',
+    icon: 'https://yt3.ggpht.com/_1Z4I2qpWaCN9g3BcDd3cVA9MDHOG43lE1YNWDNkKro49haGxkjwuFK-I8faWTKM6Jle9qb4ag=s68-c-k-c0x00ffffff-no-rj',
     link: 'https://youtu.be/Os_heh8vPfs?si=LP0fwGpIvbhGbHJ_'
   },
   {
-    img: './img/mv/mv06.svg',
+    img: 'https://i.ytimg.com/vi/0bIRwBpBcZQ/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB1qqdIywd22GvstLhp85LKSZ7hcA',
     title: 'ITZY(있지) “CAKE” M/V @ITZY',
     desc: '조회수 4520만회 · 1개월 전',
-    icon: './img/mv/mv06_01.svg',
+    icon: 'https://yt3.ggpht.com/kcV7NQkBm-UvvzVTJvrg1Yf1eHSqi-DLXuZPt_ECa3cHEPefujS951Dxj6KUEQ5i9Z7_fyMUjw=s68-c-k-c0x00ffffff-no-rj',
     link: 'https://youtu.be/0bIRwBpBcZQ?si=a3gbGV9jvdKXYJ_U'
   }
 ];
 
 export const playlistSectionData = [
   {
-    img: '/src/assets/img/playlist/playlist01.svg',
-    title: 'J Fla - To Me',
-    link: 'https://www.youtube.com/watch?v=7HDeem-JaSY'
+    img: 'https://i.ytimg.com/vi/JmF9pZHxFKg/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBSfBcP5zBdorFJtCQp5KgA7by_XQ',
+    title: '[KPOP Playlist] 텐션업 시켜주는 케이팝 노동요',
+    link: 'https://youtu.be/JmF9pZHxFKg?si=0ySnOu0Qz6MRwMMU'
   },
   {
-    img: '/src/assets/img/playlist/playlist02.svg',
-    title: 'Yesterday - The Beatles',
-    link: 'https://www.youtube.com/watch?v=7HDeem-JaSY'
+    img: 'https://i.ytimg.com/vi/yOlBsus_Hno/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAzq0yFa4goB5NiloEdSpax3e37UQ',
+    title: '𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭 제이팝 붐은 온다! 한번쯤은 들어본 유명한 J-POP 부터 숨은 명곡까지 | 요루시카, YOASOBI, 아이묭',
+    link: 'https://youtu.be/yOlBsus_Hno?si=EtnbbI9KktMXnhOR'
   },
   {
-    img: '/src/assets/img/playlist/playlist03.svg',
-    title: '(여자)아이들((G)I-DLE) - 퀸카',
-    link: 'https://www.youtube.com/watch?v=7HDeem-JaSY'
+    img: 'https://i.ytimg.com/vi/NdO1_PuJbls/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDqDekXQVsRZMS_Xc9RD4I3n86I6Q',
+    title: '[playlist] 여행갈때 들으려고 아껴놓은 국내R&B 플레이리스트✈️',
+    link: 'https://youtu.be/NdO1_PuJbls?si=IiZhu9QW6bfg9i8C'
   },
   {
-    img: '/src/assets/img/playlist/playlist04.svg',
-    title: '(여자)아이들((G)I-DLE) - 퀸카',
-    link: 'https://www.youtube.com/watch?v=7HDeem-JaSY'
+    img: 'https://i.ytimg.com/vi/C2Zp813vd1Q/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA14VdkH_ubiZV2JyyvJS84rfsQ7A',
+    title:
+      '[Playlist] 오래도록 기억될 우리의 여름날 | 여름밤 감성 드라이빙 with 르노코리아자동차 | sentimental drive pop',
+    link: 'https://youtu.be/C2Zp813vd1Q?si=RTq_pesUmFYehpDI'
+  },
+  {
+    img: 'https://i.ytimg.com/vi/Vsw-ujh9I3c/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA75viQy-7SAZw7v85p1Rj11GGOaA',
+    title: '[𝐏𝐥𝐚𝐲𝐥𝐢𝐬𝐭] 겨울에는 진득한 Old Jazz🎺',
+    link: 'https://youtu.be/Vsw-ujh9I3c?si=QDJx8tyumT94pPDu'
+  },
+  {
+    img: 'https://i.ytimg.com/vi/BvCg4W5hvNk/hq720.jpg?sqp=-oaymwE2COgCEMoBSFXyq4qpAygIARUAAIhCGAFwAcABBvABAfgB1AaAAuADigIMCAAQARhlIFUoQjAP&rs=AOn4CLBap64o59tpsiUqck0rE6W2wbfQSw',
+    title: 'this playlist will make you feel like a 19th century villain || Music Of The 19th Century',
+    link: 'https://youtu.be/BvCg4W5hvNk?si=bF02hmpm5ADfcqie'
+  }
+];
+
+export const unsplashSectionData = [
+  {
+    img: 'https://images.unsplash.com/photo-1444210971048-6130cf0c46cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/AZMmUy2qL6A'
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1444703686981-a3abbc4d4fe3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDJ8fCVFQiVCMCVBNCVFRCU5NSU5OCVFQiU4QSU5OHxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/oMpAz-DN-9I'
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1542051841857-5f90071e7989?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NTF8fGNpdHl8ZW58MHwwfDB8fHww&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/alY6_OpdwRQ'
+  },
+  {
+    img: 'https://plus.unsplash.com/premium_photo-1681433333347-1a8b6fed55fc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTd8fHNreXxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/HiQUGZKk-uk'
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1517479149777-5f3b1511d5ad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fGFpcnBsYW5lfGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/96A9UTFAMUM'
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1548192746-dd526f154ed9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OTB8fGZsb3dlcnxlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/KJGBY76mmS4'
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1511497584788-876760111969?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Zm9yZXN0fGVufDB8MHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/-heLWtuAN3c'
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1549880181-56a44cf4a9a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8bW91bnRhaW58ZW58MHwwfDB8fHww&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/ePpaQC2c1xA'
+  },
+  {
+    img: 'https://images.unsplash.com/photo-1550948537-130a1ce83314?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8ODR8fGRvZ3xlbnwwfDB8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60',
+    link: 'https://unsplash.com/ko/%EC%82%AC%EC%A7%84/8-sgismcDAQ'
+  }
+];
+
+export const movieSectionData = [
+  {
+    img: 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/jjHccoFjbqlfr4VGLVLT7yek0Xn.jpg',
+    link: 'https://www.themoviedb.org/movie/496243'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/xiz6TiSduvR1U3VLfWVlBEdT9fO.jpg',
+    link: 'https://www.themoviedb.org/movie/4935'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/zTgjeblxSLSvomt6F6UYtpiD4n7.jpg',
+    link: 'https://www.themoviedb.org/movie/27205-inception'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/f6dNinWX8rBM79JXKcShkfSh2oA.jpg',
+    link: 'https://www.themoviedb.org/movie/155-the-dark-knight'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w220_and_h330_face/6bdUtxydFXLtgcxHMMvlkNnRZWg.jpg',
+    link: 'https://www.themoviedb.org/movie/555604'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w220_and_h330_face/wrCwH6WOvXQvVuqcKNUrLDCDxdw.jpg',
+    link: 'https://www.themoviedb.org/movie/475557'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/9uh4pH6lxTIWlcToZ1PPpdhYJBD.jpg',
+    link: 'https://www.themoviedb.org/movie/399055-the-shape-of-water'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w300_and_h450_bestv2/zrpapwMGMBeCGqeBn1Svoyz7SBI.jpg',
+    link: 'https://www.themoviedb.org/movie/399174-isle-of-dogs'
+  },
+  {
+    img: 'https://www.themoviedb.org/t/p/w600_and_h900_bestv2/5TJjXwERQGX9nUu21UaK9N4wECD.jpg',
+    link: 'https://www.themoviedb.org/movie/129'
   }
 ];
 
@@ -414,4 +514,41 @@ export const mvTagData = [
   { name: 'NCT' },
   { name: 'EXO' },
   { name: 'SEVENTEEN' }
+];
+
+export const playlistTagData = [
+  { name: '전체' },
+  { name: '팝송' },
+  { name: 'K-POP' },
+  { name: 'J-POP' },
+  { name: '여행' },
+  { name: '드라이브' },
+  { name: '알앤비' },
+  { name: '재즈' },
+  { name: '클래식' },
+  { name: '카페' }
+];
+
+export const unsplashTagData = [
+  { name: '전체', eng: 'all' },
+  { name: '코딩', eng: 'coding' },
+  { name: '여행', eng: 'travel' },
+  { name: '구름', eng: 'cloud' },
+  { name: '강아지', eng: 'dog' },
+  { name: '키보드', eng: 'keyboard' },
+  { name: '인테리어', eng: 'interior' }
+];
+
+export const movieTagData = [
+  { name: '인기 영화', eng: 'popular' },
+  { name: '현재 상영 중', eng: 'now_playing' },
+  { name: '개봉 예정', eng: 'upcoming' },
+  { name: '높은 평점', eng: 'top_rated' }
+];
+
+export const tvTagData = [
+  { name: '인기 TV 프로그램', eng: 'popular' },
+  { name: '오늘 방영', eng: 'airing_today' },
+  { name: 'TV 방영 중', eng: 'on_the_air' },
+  { name: '높은 평점', eng: 'top_rated' }
 ];

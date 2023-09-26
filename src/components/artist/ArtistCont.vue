@@ -81,7 +81,6 @@ export default {
     .artist-cont {
       @include flex-between;
       gap: 40px 0;
-      flex-wrap: wrap;
 
       .genre-desc {
         width: 100%;
@@ -89,7 +88,7 @@ export default {
         padding: 40px;
         letter-spacing: -0.05em;
         font-size: 18px;
-        color: #222;
+        color: var(--black);
         background-color: #feeded;
         box-sizing: border-box;
         @include border(20px);

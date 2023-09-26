@@ -3,15 +3,12 @@ import { artistSectionData } from '@/constants/index';
 </script>
 
 <template>
-  <section id="artist" class="section">
-    <h3 class="txt-hidden">음악 장르에 대한 소개</h3>
+  <section id="artist" class="section center">
+    <h3 class="txt-hidden">장르별 아티스트 섹션</h3>
     <div class="artist-inner container">
-      <div class="artist-title">
-        <span>Music Genre by Artists</span>
-        <h3 v-html="artistSectionData.title"></h3>
-        <p v-html="artistSectionData.desc"></p>
-        <router-link to="/artist">자세히 보기</router-link>
-      </div>
+      <h3 v-html="artistSectionData.title"></h3>
+      <p v-html="artistSectionData.desc"></p>
+      <router-link to="/artist" class="button-pink">자세히 보기</router-link>
       <div class="artist-desc">
         <div v-for="(genre, i) in artistSectionData.genres" :key="i">
           <h4 :class="'icon-bg' + (i + 1)">{{ genre.title }}</h4>
@@ -37,69 +34,40 @@ export default {};
   box-sizing: border-box;
   background-color: var(--subBg100);
 
-  .artist-inner {
-    display: flex;
-    justify-content: space-between;
-  }
-  .artist-title {
-    width: 33%;
-
-    span {
-      @include border(40px);
-      background-color: #ff3344;
-      font-size: 14px;
-      padding: 4px 30px 2px;
-      color: #fff;
-      text-transform: uppercase;
-      margin-bottom: 10px;
-      display: inline-block;
-    }
-    h3 {
-      font-size: 50px;
-      font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 30px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.5;
-      font-weight: 500;
-      margin-bottom: 30px;
-    }
-    a {
-      @include border(50px);
-      display: inline-block;
-      padding: 10px 50px;
-      border: 2px solid #ff3344;
-      background-color: var(--white);
-      color: #ff3344;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: #ff3344;
-        color: var(--white);
-      }
-    }
-  }
   .artist-desc {
-    width: 66%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
 
     > div {
-      width: 48%;
+      width: calc(50% - 20px);
+      margin-right: 40px;
       margin-bottom: 40px;
+      padding: 30px 25px;
+      border-radius: 20px;
+      background-color: #fff;
+      box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      &:nth-child(2n) {
+        margin-right: 0;
+      }
 
       h4 {
         font-size: 24px;
-        margin-bottom: 15px;
+        font-weight: bold;
+        color: #222;
+        word-break: keep-all;
+        margin-bottom: 20px;
       }
       &:nth-child(3) {
         margin-bottom: 0;
       }
       &:nth-child(4) {
         margin-bottom: 0;
+      }
+
+      p {
+        color: var(--black100);
       }
     }
   }

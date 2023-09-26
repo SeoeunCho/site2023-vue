@@ -2,8 +2,8 @@
   <div class="playlist-cont">
     <ul>
       <li v-for="(playlist, index) in playlists" :key="index">
-        <a :href="'https://www.playlist.com/watch?v=' + playlist.id.videoId" target="_blank" rel="noopener noreferrer">
-          <img :src="playlist.snippet.thumbnails.medium.url" alt="유튜브" />
+        <a :href="'https://www.youtube.com/watch?v=' + playlist.id.videoId" target="_blank" rel="noopener noreferrer">
+          <img :src="playlist.snippet.thumbnails.medium.url" alt="playlist" />
           <span>{{ decodeHTMLEntities(playlist.snippet.title) }}</span>
         </a>
       </li>
@@ -47,30 +47,28 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 @import '../../assets/scss/setting/mixin';
+
 .playlist-cont {
   ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 100px;
+    @include flex-between;
 
     li {
       width: 24%;
-      margin-bottom: 4%;
+      margin-bottom: 28px;
 
       img {
-        width: 100%;
-        border-radius: 20px;
+        @include border(10px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       }
 
       span {
         display: block;
-        margin: 4px 0;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
+        margin: 10px 0;
+        font-size: 17px;
+        font-weight: 600;
+        @include line-ellipsis;
       }
     }
   }
