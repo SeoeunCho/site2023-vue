@@ -110,7 +110,7 @@ export default {
     background-color: var(--white);
 
     .depth01 {
-      a {
+      > a {
         color: var(--black);
       }
     }
@@ -123,7 +123,7 @@ export default {
     color: var(--black);
 
     .depth01 {
-      a {
+      > a {
         color: var(--black);
       }
     }
@@ -131,6 +131,8 @@ export default {
   &.router-active {
     background-color: var(--white);
     border-bottom: 1px solid #eee !important;
+
+    
   }
 }
 
