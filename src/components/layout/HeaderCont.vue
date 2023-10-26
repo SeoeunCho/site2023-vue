@@ -72,8 +72,7 @@ export default {
   },
   watch: {
     allMenuActive() {
-      const htmlDom = document.getElementsByTagName('html')[0];
-      htmlDom.classList.toggle('scrollLock');
+      document.body.classList.toggle('scrollLock');
     },
     depthMenu(oldVal, newVal) {
       if (oldVal !== newVal) {
