@@ -72,7 +72,8 @@ export default {
   },
   watch: {
     allMenuActive() {
-      document.body.classList.toggle('scrollLock');
+      const htmlDom = document.getElementsByTagName('html')[0];
+      htmlDom.classList.toggle('scrollLock');
     },
     depthMenu(oldVal, newVal) {
       if (oldVal !== newVal) {
@@ -99,7 +100,6 @@ export default {
         this.depthActive = false;
       } else {
         this.allMenuActive = false;
-        this.$store.commit('scrollTop');
       }
     },
     showGnbDepth(menu) {
